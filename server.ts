@@ -1,11 +1,13 @@
 import { Express, Request, Response } from "express"
 import * as express from "express"
 
+const path = require("path")
+
 const app: Express = express()
 const port: number = 3000
 
 // Serving React App
-app.use("/*", express.static(__dirname))
+app.use("/", express.static(path.join(__dirname, "dist")))
 
 app.get("/api/v1", (req: Request, res: Response) => {
 	res.json({
