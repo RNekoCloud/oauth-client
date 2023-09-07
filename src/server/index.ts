@@ -11,4 +11,14 @@ app.get("/api/v1", (_, res: Response) => {
 	})
 })
 
+if (!proccess.env["VITE"]) {
+	const frontEndFiles = proccess.cwd() + "/dist"
+	app.use(express.static(frontEndFiles))
+	app.get("/*", (_, res: Response) => {
+		res.send(frontEndFiles + "./index.html")
+	})
+
+	app.listen(proccess.env["PORT"])
+}
+
 
