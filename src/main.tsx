@@ -3,7 +3,7 @@ import * as ReactDOM from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import App from './App.tsx'
 import './index.css'
-import Verify from "./routes/Verify"
+import Success from "./routes/Success"
 
 const router = createBrowserRouter([
 	{
@@ -11,8 +11,8 @@ const router = createBrowserRouter([
 		element: <App />,
 	},
 	{
-		path: "/verify/:token",
-		element: <Verify />
+		path: "/success",
+		element: <Success />
 	}
 ])
 
